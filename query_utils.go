@@ -227,7 +227,7 @@ func (qu *QueryUtils) GetRecordHistory(ctx contractapi.TransactionContextInterfa
 	}
 	defer resultsIterator.Close()
 
-	results, err := getAllResults(resultsIterator)
+	results, err := getAllHistoryResults(resultsIterator)
 	if err != nil {
 		return "", err
 	}
