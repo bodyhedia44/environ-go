@@ -28,7 +28,7 @@ func simpleHash(str string) string {
 
 // getAllResults collects all results from a state query iterator
 func getAllResults(iterator shim.StateQueryIteratorInterface) ([]map[string]interface{}, error) {
-	allResults := []map[string]interface{}{}
+	var allResults []map[string]interface{}
 
 	for iterator.HasNext() {
 		queryResponse, err := iterator.Next()
@@ -55,7 +55,7 @@ func getAllResults(iterator shim.StateQueryIteratorInterface) ([]map[string]inte
 
 // getAllHistoryResults collects all results from a history query iterator
 func getAllHistoryResults(iterator shim.HistoryQueryIteratorInterface) ([]map[string]interface{}, error) {
-	allResults := []map[string]interface{}{}
+	var allResults []map[string]interface{}
 
 	for iterator.HasNext() {
 		queryResponse, err := iterator.Next()
